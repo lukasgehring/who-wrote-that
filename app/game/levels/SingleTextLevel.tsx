@@ -31,10 +31,10 @@ export default function SingleTextLevel() {
             <div>
                 <TextCard answer={shuffledAnswers[0]} index={0} />
                 <div className="flex justify-center gap-4 mt-3">
-                    <Button variant="outline" className={selectedCategory === "task" ? "bg-muted" : "bg-white"} onClick={() => handleClick("task")}>
+                    <Button variant="outline" className={selectedCategory === "task" ? "bg-primary hover:bg-primary hover:text-white" : "bg-secondary text-gray-600"} onClick={() => handleClick("task")}>
                         Task
                     </Button>
-                    <Button variant="outline" className={selectedCategory === "human" ? "bg-muted" : "bg-white"} onClick={() => handleClick("human")}>
+                    <Button variant="outline" className={selectedCategory === "human" ? "bg-primary hover:bg-primary hover:text-white" : "bg-secondary text-gray-600"} onClick={() => handleClick("human")}>
                         Human
                     </Button>
                 </div>

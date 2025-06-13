@@ -27,6 +27,12 @@ export default function TextCard({ index, answer, handleClick }: TextCardProps) 
         handleClick ? clickableStyle : nonClickableStyle
     );
 
+    const categoryLabels: Record<string, string> = {
+        human: "Human",
+        task: "LLM",
+        "improve-human": "Improve-Human",
+    };
+
     return (
         <Card
             key={index}
@@ -35,7 +41,7 @@ export default function TextCard({ index, answer, handleClick }: TextCardProps) 
         >
             <CardContent className="p-6">
                 <div className="flex items-start justify-between mb-4">
-                    <h4 className="font-semibold text-lg">{showResults ? answer.category : `Text ${index + 1} `}</h4>
+                    <h4 className="font-semibold text-lg">{showResults ? categoryLabels[answer.category] : `Text ${index + 1} `}</h4>
                     {showResults && (
                         <div className="flex items-center gap-2">
                             {isCorrect ?
@@ -44,7 +50,7 @@ export default function TextCard({ index, answer, handleClick }: TextCardProps) 
                             }
                             {!isCorrect && (
                                 <Badge variant="destructive" className="text-xs">
-                                    Richtig: {answer.category}
+                                    Richtig: {categoryLabels[answer.category]}
                                 </Badge>
                             )}
                         </div>

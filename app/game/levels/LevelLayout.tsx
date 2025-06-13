@@ -6,7 +6,6 @@ import GameHeader from "./components/GameHeader";
 import QuestionCard from "./components/QuestionCard";
 import LevelDashboard from "./LevelDashboard";
 import CancelLevel from "./components/CancelLevel";
-import { Button } from "@/components/ui/button";
 
 type Props = {
     children: ReactNode
@@ -14,7 +13,7 @@ type Props = {
 
 export default function LevelLayout({ children }: Props) {
 
-    const { levelComplete, nextSample } = useLevelStore();
+    const { levelComplete } = useLevelStore();
 
     if (levelComplete) {
         return <LevelDashboard />
@@ -25,7 +24,6 @@ export default function LevelLayout({ children }: Props) {
             <div className="container mx-auto py-8 px-8">
                 <div className="max-w-6xl mx-auto">
                     <GameHeader />
-                    <Button onClick={nextSample}>Next</Button>
                     <QuestionCard />
                 </div>
                 {children}

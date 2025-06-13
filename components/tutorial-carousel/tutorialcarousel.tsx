@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeft, ArrowRight, Sparkles } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 
 
@@ -77,7 +77,7 @@ export function TutorialCarousel({ slides }: { slides: CardData[] }) {
                                 <CardTitle className="text-2xl font-bold">{slides[page].title}</CardTitle>
                             </CardHeader>
                             <CardContent>
-                                <p>{slides[page].content}</p>
+                                {slides[page].content}
                             </CardContent>
                         </Card>
 
@@ -97,6 +97,7 @@ export function TutorialCarousel({ slides }: { slides: CardData[] }) {
                 {[...Array(slides.length)].map((_, i) => {
                     return (
                         <motion.div
+                            key={i}
                             className="w-[20px] h-[5px] rounded"
                             animate={{
                                 backgroundColor: i === page ? "#FFFFFF" : "#D1D5DB",

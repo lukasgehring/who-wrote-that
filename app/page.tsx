@@ -8,6 +8,6 @@ export default function Home() {
   const router = useRouter();
 
   return (
-    <Button onClick={() => router.push("/tutorial")}>Tutorial</Button>
+    <Button onClick={() => router.push("/game")}>Start</Button>
   );
 }

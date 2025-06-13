@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import SingleTextLevel from "./SingleTextLevel";
-import TutorialCarousel from "../tutorial/TutorialCarousel";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { TutorialCarousel } from "@/components/tutorial-carousel/tutorialcarousel";
 
 
 

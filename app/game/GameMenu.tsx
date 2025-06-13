@@ -12,7 +12,7 @@ import { LineChart, Lock, Play, Settings2 } from "lucide-react";
 const levels = ['level1', 'level2', 'level3'];
 
 export default function GameMenu() {
-    const { setCurrentScreen, totalScore, lockedLevels, levelScores } = useGameStore();
+    const { setCurrentScreen, totalScore, lockedLevels, levelScores, levelStartable } = useGameStore();
     const { setLevel } = useLevelStore();
 
 
@@ -61,7 +61,7 @@ export default function GameMenu() {
                                         : isCompleted ? "text-primary border-gray-500 hover:bg-gray-500/10 text-gray-500" : "text-primary border-primary hover:bg-primary/10"
                                         }`}
                                     onClick={() => selectLevel(level)}
-                                    disabled={isLocked}
+                                    disabled={!levelStartable[level]}
                                 >
                                     {isLocked ? <Lock /> : <Play />} Level {level.slice(5)}
                                 </Button>
