@@ -14,12 +14,16 @@ import {
     CardHeader,
     CardTitle
 } from "@/components/ui/card";
-import { slides } from "./slides";
 import React from "react";
 import { TypographyH3 } from "@/components/ui/typography";
 import { Progress } from "@/components/ui/progress";
 
-export default function TutorialCarousel() {
+interface TutorialCarouselProps {
+    slides: Array<{ title: string, content: React.ReactNode }>
+
+}
+
+export default function TutorialCarousel({ slides }: TutorialCarouselProps) {
 
     const [api, setApi] = React.useState<CarouselApi>();
     const [current, setCurrent] = React.useState(1);
@@ -45,8 +49,8 @@ export default function TutorialCarousel() {
                                             <TypographyH3>{slide.title}</TypographyH3>
                                         </CardTitle>
                                     </CardHeader>
-                                    <CardContent className="flex p-6">
-                                        <span>{slide.content}</span>
+                                    <CardContent className="p-6 space-y-4 text-sm text-muted-foreground leading-relaxed">
+                                        {slide.content}
                                     </CardContent>
                                 </Card>
                             </div>
