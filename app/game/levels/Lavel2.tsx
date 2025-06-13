@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import TwoTextLevel from "./TwoTextLevel";
-import TutorialCarousel from "../tutorial/TutorialCarousel";
 import { Button } from "@/components/ui/button";
+import { TutorialCarousel } from "@/components/tutorial-carousel/tutorialcarousel";
 
 export default function Level2() {
 
